@@ -78,7 +78,7 @@ class CartPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => PaymentPage()),
+                  MaterialPageRoute(builder: (context) => PaymentPage(cartItems: Cart.cartItems)),
                 );
               },
               child: Text('Checkout'),

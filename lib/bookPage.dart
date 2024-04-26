@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'book.dart';
 import 'bookDetail.dart';
 
-
 class BooksPage extends StatelessWidget {
   final Category category;
 
@@ -10,10 +9,12 @@ class BooksPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Color appColor = const Color(0xFF3E2F84); // Define the app color
+
     return Scaffold(
       appBar: AppBar(
         title: Text(category.title),
-        backgroundColor: Colors.teal // Replace with the desired light teal color
+        backgroundColor: appColor, // Use the app color for the app bar background
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -52,6 +53,7 @@ class BooksPage extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 18.0,
                                 fontWeight: FontWeight.bold,
+                                color: appColor, // Use the app color for the book title
                               ),
                             ),
                             SizedBox(height: 8.0),
