@@ -1,37 +1,91 @@
-import 'package:afronex/productDetail.dart';  // Check if the file name and location are correct
 import 'package:flutter/material.dart';
-import 'product.dart';  // Ensure this is the correct path for your Product model
+import 'book.dart';
+import 'bookPage.dart';
+
 
 class HomePage extends StatelessWidget {
-  final List<Product> products;
-
-  HomePage({Key? key, required this.products}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Product Catalog'),
-      ),
-      body: ListView.builder(
-        itemCount: products.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            leading: Image.asset(products[index].imageUrl),  // Use Image.asset for local images
-            title: Text(products[index].name),
-            subtitle: Text('\$${products[index].price}'),
-            onTap: () {
-              // Navigate to Product Details Page
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ProductDetailsPage(product: products[index]),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 32.0, left: 16.0, right: 16.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Search...',
+                      prefixIcon: const Icon(Icons.search),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  ),
                 ),
-              );
-            },
-          );
-        },
+                const SizedBox(width: 16.0),
+                ElevatedButton(
+                  onPressed: () {
+                    // Handle search button tap
+                  },
+                  child: const Text('Search'),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 16.0),
+          Expanded(
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 0.75,
+              ),
+              itemCount: categories.length,
+              itemBuilder: (context, index) {
+                final category = categories[index];
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => BooksPage(category: category),
+                        ),
+                      );
+                    },
+                    child: Card(
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: Image.asset(
+                              category.imagePath,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              category.title,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
 }
+
