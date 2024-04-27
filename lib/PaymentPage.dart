@@ -81,11 +81,11 @@ class PaymentPage extends StatelessWidget {
                 labelText: 'Expiration Date',
               ),
             ),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'CVV',
-              ),
-            ),
+            // TextField(
+            //   decoration: InputDecoration(
+            //     labelText: 'CVV',
+            //   ),
+            // ),
             SizedBox(height: 24.0),
             ElevatedButton(
               onPressed: () {
