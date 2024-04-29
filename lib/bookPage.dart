@@ -126,7 +126,7 @@ class BooksPage extends StatelessWidget {
             ),
             IconButton(
               icon: Icon(
-                Icons.settings,
+                Icons.shopping_cart,
                 color: Colors.white,
               ),
               onPressed: () {

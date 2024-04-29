@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'book.dart';
 import 'bookPage.dart';
-
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   final Color appColor = const Color(0xFF3E2F84);
+  final PageController _pageController = PageController();
+  int _currentPage = 0;
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,18 +47,27 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 100.0),
+        padding: const EdgeInsets.only(top: 40.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Center(
+              child: Text(
+                " << Choose category >> ",
+                style: TextStyle(
+                  color: Colors.black54,
+                ),
+              ),
+            ),
             const SizedBox(height: 16.0),
             Align(
               alignment: Alignment.center,
               child: FractionallySizedBox(
-                widthFactor: 0.8, // Adjust the width factor as needed
+                widthFactor: 0.8,
                 child: SizedBox(
-                  height: 500.0, // Set the desired height
+                  height: 550.0,
                   child: PageView.builder(
+                    controller: _pageController,
                     scrollDirection: Axis.horizontal,
                     itemCount: categories.length,
                     itemBuilder: (context, index) {
@@ -56,12 +79,13 @@ class HomePage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => BooksPage(category: category),
+                                builder: (context) =>
+                                    BooksPage(category: category),
                               ),
                             );
                           },
                           child: Container(
-                            width: 200.0, // Set the desired width
+                            width: 200.0,
                             child: Card(
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),
@@ -99,6 +123,27 @@ class HomePage extends StatelessWidget {
                         ),
                       );
                     },
+                    onPageChanged: (index) {
+                      setState(() {
+                        _currentPage = index;
+                      });
+                    },
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 16.0),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: SmoothPageIndicator(
+                  controller: _pageController,
+                  count: categories.length,
+                  effect: WormEffect(
+                    dotColor: Colors.grey,
+                    activeDotColor: appColor,
+                    dotHeight: 8.0,
+                    dotWidth: 8.0,
                   ),
                 ),
               ),
@@ -140,7 +185,7 @@ class HomePage extends StatelessWidget {
             ),
             IconButton(
               icon: Icon(
-                Icons.settings,
+                Icons.shopping_cart,
                 color: Colors.white,
               ),
               onPressed: () {
