@@ -165,6 +165,7 @@ class Book {
   final double price;
   final String description;
   final double rating;
+  final int reviewCount;  // Add this line
 
   Book({
     required this.id,
@@ -174,8 +175,10 @@ class Book {
     required this.price,
     required this.description,
     required this.rating,
+    required this.reviewCount,  // Add this line
   });
 }
+
 
 class Category {
   final String id;
@@ -198,7 +201,7 @@ List<Category> categories = [
   Category(
     id: 'fiction',
     title: 'Fiction Books',
-    imagePath: 'assets/images/fiction.jpeg',
+    imagePath: 'assets/images/1.jpeg',
     rating: 4.8,
     books: [
       Book(
@@ -208,7 +211,7 @@ List<Category> categories = [
         imagePath: 'assets/images/1.jpeg',
         price: 10.99,
         description: 'A gripping fictional story filled with suspense.',
-        rating: 4.9,
+        rating: 4.9, reviewCount: 123,
       ),
       Book(
         id: 'fiction2',
@@ -217,7 +220,7 @@ List<Category> categories = [
         imagePath: 'assets/images/2.jpeg',
         price: 9.99,
         description: 'An intriguing literary masterpiece.',
-        rating: 4.8,
+        rating: 4.8, reviewCount: 100,
       ),
       // Add more books here
     ],
@@ -229,8 +232,15 @@ List<Category> categories = [
     imagePath: 'assets/images/1.jpeg',
     rating: 4.7,
     books: [
-      // Books for Fantasy Category
-      // ...
+      Book(
+        id: 'fiction2',
+        title: 'Book 2',
+        author: 'Author 2',
+        imagePath: 'assets/images/2.jpeg',
+        price: 9.99,
+        description: 'An intriguing literary masterpiece.',
+        rating: 4.8, reviewCount: 100,
+      ),
     ],
   ),
   // Romance Books Category
@@ -240,8 +250,15 @@ List<Category> categories = [
     imagePath: 'assets/images/3.jpeg',
     rating: 4.6,
     books: [
-      // Books for Romance Category
-      // ...
+      Book(
+        id: 'fiction2',
+        title: 'Book 2',
+        author: 'Author 2',
+        imagePath: 'assets/images/2.jpeg',
+        price: 9.99,
+        description: 'An intriguing literary masterpiece.',
+        rating: 4.8, reviewCount: 100,
+      ),
     ],
   ),
   // Books For Kids Category
@@ -251,19 +268,33 @@ List<Category> categories = [
     imagePath: 'assets/images/1.jpeg',
     rating: 4.9,
     books: [
-      // Books for Kids Category
-      // ...
+      Book(
+        id: 'fiction2',
+        title: 'Book 2',
+        author: 'Author 2',
+        imagePath: 'assets/images/2.jpeg',
+        price: 9.99,
+        description: 'An intriguing literary masterpiece.',
+        rating: 4.8, reviewCount: 100,
+      ),
     ],
   ),
   // Science Books Category
   Category(
     id: 'science',
     title: 'Science Books',
-    imagePath: 'assets/images/2.jpeg',
+    imagePath: 'assets/images/1.jpeg',
     rating: 4.7,
     books: [
-      // Books for Science Category
-      // ...
+      Book(
+        id: 'fiction2',
+        title: 'Book 2',
+        author: 'Author 2',
+        imagePath: 'assets/images/2.jpeg',
+        price: 9.99,
+        description: 'An intriguing literary masterpiece.',
+        rating: 4.8, reviewCount: 100,
+      ),
     ],
   ),
   // More categories can be added here
