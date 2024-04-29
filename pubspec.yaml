@@ -31,13 +31,16 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  in_app_purchase: ^3.0.1
+  in_app_purchase: ^0.6.0
+  smooth_page_indicator: ^1.1.0
+  flutter_slidable: ^3.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-  smooth_page_indicator: ^1.1.0
+
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -54,6 +57,7 @@ flutter:
      - assets/images/1.jpeg
      - assets/images/2.jpeg
      - assets/images/3.jpeg
+     - assets/images/profile.jpeg
      - assets/images/4.webp
      - assets/images/5.webp
      - assets/images/6.webp

@@ -35,15 +35,11 @@ class _HomePageState extends State<HomePage> {
           },
         ),
         actions: [
-          IconButton(
-            icon: Icon(
-              Icons.shopping_cart,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              // Handle cart button tap
-            },
+          CircleAvatar(
+            backgroundImage: AssetImage('assets/images/profile.jpeg'), // Replace with the actual path to the profile image
+            radius: 25.0,
           ),
+
         ],
       ),
       body: Padding(
