@@ -25,7 +25,7 @@ class Cart {
 class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Color appColor = const Color(0xFF3E2F84);
+    final Color appColor = const Color(0xFF8A95D6);
     final total = Cart.getTotalPrice();
 
     return Scaffold(

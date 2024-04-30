@@ -150,7 +150,7 @@ class PaymentPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color appColor = const Color(0xFF3E2F84); // Define the app color
+    final Color appColor = const Color(0xFF8A95D6); // Define the app color
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text('Payment Page')),

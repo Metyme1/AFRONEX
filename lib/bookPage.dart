@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'HomePage.dart';
 import 'book.dart';
 import 'bookDetail.dart';
+import 'cart.dart';
 
 class BooksPage extends StatelessWidget {
   final Category category;
@@ -9,7 +11,7 @@ class BooksPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color appColor = const Color(0xFF3E2F84); // Define the app color
+    final Color appColor = const Color(0xFF8A95D6); // Define the app color
 
     return Scaffold(
       appBar: AppBar(
@@ -103,7 +105,10 @@ class BooksPage extends StatelessWidget {
                 color: Colors.white,
               ),
               onPressed: () {
-                // Handle home button tap
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
               },
             ),
             IconButton(
@@ -112,7 +117,10 @@ class BooksPage extends StatelessWidget {
                 color: Colors.white,
               ),
               onPressed: () {
-                // Handle search button tap
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => SearchPage()),
+                // );
               },
             ),
             IconButton(
@@ -121,7 +129,10 @@ class BooksPage extends StatelessWidget {
                 color: Colors.white,
               ),
               onPressed: () {
-                // Handle favorite button tap
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => FavoritePage()),
+                // );
               },
             ),
             IconButton(
@@ -130,7 +141,10 @@ class BooksPage extends StatelessWidget {
                 color: Colors.white,
               ),
               onPressed: () {
-                // Handle settings button tap
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CartPage()),
+                );
               },
             ),
           ],

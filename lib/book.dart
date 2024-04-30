@@ -202,7 +202,7 @@ List<Category> categories = [
   Category(
     id: 'fiction',
     title: 'Fiction Books',
-    imagePath: 'assets/images/fi1.jpeg',
+    imagePath: 'assets/images/fi1.jpg',
     rating: 4.8,
     books: [
       Book(
@@ -241,7 +241,7 @@ List<Category> categories = [
   Category(
     id: 'fantasy',
     title: 'Fantasy Books',
-    imagePath: 'assets/images/1.jpeg',
+    imagePath: 'assets/images/fa1.jpg',
     rating: 4.7,
     books: [
       Book(
@@ -349,7 +349,7 @@ List<Category> categories = [
   Category(
     id: 'science',
     title: 'Science Books',
-    imagePath: 'assets/images/sc1.jpeg',
+    imagePath: 'assets/images/sc1.jpg',
     rating: 4.7,
     books: [
       Book(

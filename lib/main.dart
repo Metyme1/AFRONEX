@@ -139,6 +139,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:task/paymentPage.dart';
+import 'package:task/welcome.dart';
 
 import 'HomePage.dart';
 
@@ -156,7 +157,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: WelcomePage(),
       routes: {
         '/PaymentPage': (context) => PaymentPage(cartItems:[]),
       },

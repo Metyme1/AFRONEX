@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'HomePage.dart';
 import 'book.dart';
 import 'cart.dart';
 
@@ -9,7 +10,7 @@ class BookDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color appColor = const Color(0xFF3E2F84); // Define the app color
+    final Color appColor = const Color(0xFF8A95D6); // Define the app color
     return Scaffold(
 
       body: Column(
@@ -67,12 +68,12 @@ class BookDetailPage extends StatelessWidget {
                               Text(
                                 book.title,
                                 style: TextStyle(
-                                  fontSize: 22.0,
+                                  fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black,
                                 ),
                               ),
-                              SizedBox(width: 150),
+                              SizedBox(width: 80),
                               Text(
                                 '⭐ ${book.rating.toString()} (${book.reviewCount.toString()} reviews)',
                                 style: TextStyle(
@@ -148,7 +149,10 @@ class BookDetailPage extends StatelessWidget {
                 color: Colors.white,
               ),
               onPressed: () {
-                // Handle home button tap
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
               },
             ),
             IconButton(
@@ -157,7 +161,10 @@ class BookDetailPage extends StatelessWidget {
                 color: Colors.white,
               ),
               onPressed: () {
-                // Handle search button tap
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => SearchPage()),
+                // );
               },
             ),
             IconButton(
@@ -166,7 +173,10 @@ class BookDetailPage extends StatelessWidget {
                 color: Colors.white,
               ),
               onPressed: () {
-                // Handle favorite button tap
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => FavoritePage()),
+                // );
               },
             ),
             IconButton(
@@ -175,7 +185,10 @@ class BookDetailPage extends StatelessWidget {
                 color: Colors.white,
               ),
               onPressed: () {
-                // Handle settings button tap
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CartPage()),
+                );
               },
             ),
           ],

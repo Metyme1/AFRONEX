@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'book.dart';
 import 'bookPage.dart';
+import 'cart.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -10,7 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final Color appColor = const Color(0xFF3E2F84);
+  final Color appColor = const Color(0xFF8A95D6);
   final PageController _pageController = PageController();
   int _currentPage = 0;
 
@@ -158,7 +159,10 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.white,
               ),
               onPressed: () {
-                // Handle home button tap
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
               },
             ),
             IconButton(
@@ -167,7 +171,10 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.white,
               ),
               onPressed: () {
-                // Handle search button tap
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => SearchPage()),
+                // );
               },
             ),
             IconButton(
@@ -176,7 +183,10 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.white,
               ),
               onPressed: () {
-                // Handle favorite button tap
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => FavoritePage()),
+                // );
               },
             ),
             IconButton(
@@ -185,7 +195,10 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.white,
               ),
               onPressed: () {
-                // Handle settings button tap
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CartPage()),
+                );
               },
             ),
           ],
