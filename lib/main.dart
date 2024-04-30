@@ -141,12 +141,14 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:task/paymentPage.dart';
 import 'package:task/welcome.dart';
 
-import 'HomePage.dart';
 
-void main() {
+
+void main() async {
+
   Stripe.publishableKey = 'pk_test_51PAt0FRtJBuWWet1NmfBZE0PP03RlafFc3aqlzIGYkW2393B3oc17Y4BoneH2zqz3LFcAXQs0o2U3qCCMDfNM2Dc007qoTA8Y9'; // Replace with your Stripe publishable key
   runApp(MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   @override

@@ -151,6 +151,10 @@ class PaymentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color appColor = const Color(0xFF8A95D6); // Define the app color
+
+    // Calculate the total price
+    double totalPrice = cartItems.fold(0, (sum, book) => sum + book.price);
+
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text('Payment Page')),
@@ -202,24 +206,36 @@ class PaymentPage extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white, // Set the button background color
-                    onPrimary: appColor, // Set the button text color
-                    padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20), // Set the button padding
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
-                      side: BorderSide(color: appColor)
-                      // Set the button border radius
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    'Total Price: \$${totalPrice.toStringAsFixed(2)}',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  onPressed: () {
-                    makePayment(context);
-                  },
-                  child: Text('Make Payment'),
-                ),
+                  SizedBox(height: 24.0),
+                  Center(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white, // Set the button background color
+                        onPrimary: appColor, // Set the button text color
+                        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20), // Set the button padding
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0),
+                            side: BorderSide(color: appColor)
+                          // Set the button border radius
+                        ),
+                      ),
+                      onPressed: () {
+                        makePayment(context);
+                      },
+                      child: Text('Make Payment'),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
@@ -227,6 +243,8 @@ class PaymentPage extends StatelessWidget {
       ),
     );
   }
+
+
 
   Future<void> makePayment(BuildContext context) async {
     try {
@@ -266,7 +284,7 @@ class PaymentPage extends StatelessWidget {
         Uri.parse("https://api.stripe.com/v1/payment_intents"),
         body: body,
         headers: {
-          "Authorization": "Bearer sk_test_51PAt0FRtJBuWWet1UsIs26BIjqNRy7miXMSCP3FIY161BXGFIUGempAWiFFWsUQSY6wNdv707Lj7oIzMrcKCjrdO00JV6s0yWw", // Replace with your Stripe secret key
+
           "Content-Type": "application/x-www-form-urlencoded",
         },
       );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task/HomePage.dart';
+import 'package:task/sign.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
@@ -14,7 +15,7 @@ class WelcomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
+                  MaterialPageRoute(builder: (context) => LoginPage()),
                 );
               },
               child: Column(

@@ -35,6 +35,9 @@ dependencies:
   stripe_platform_interface: ^9.5.0 # Adjusted to match flutter_stripe
   flutter_stripe: ^9.5.0
   http: ^0.13.3
+  cloud_firestore: ^4.8.3
+  firebase_auth: ^4.6.3
+  firebase_storage: ^11.2.4
 
 
 
