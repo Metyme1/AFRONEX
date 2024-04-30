@@ -34,17 +34,12 @@ class CartPage extends StatelessWidget {
           child: Text(
             'Cart',
             style: TextStyle(
-              color: Colors.black,
+              color: Colors.white,
             ),
           ),
         ),
-        leading: IconButton(
-          icon: Icon(Icons.home),
-          onPressed: () {
-            Navigator.popUntil(context, ModalRoute.withName('/'));
-          },
-        ),
-        backgroundColor: Colors.white,
+
+        backgroundColor: appColor,
         iconTheme: IconThemeData(color: Colors.black),
         elevation: 1,
       ),

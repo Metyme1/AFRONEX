@@ -74,6 +74,23 @@ flutter:
     - assets/images/7.webp
     - assets/images/8.webp
     - assets/images/10.webp
+    - assets/images/kid1.jpeg
+    - assets/images/kid2.jpeg
+    - assets/images/kid3.jpeg
+    - assets/images/fa1.jpg
+    - assets/images/fa2.jpg
+    - assets/images/fa3.jpg
+    - assets/images/ro1.jpg
+    - assets/images/ro2.jpg
+    - assets/images/ro2.jpg
+    - assets/images/fi1.jpg
+    - assets/images/fi2.jpg
+    - assets/images/fi3.jpg
+    - assets/images/sc1.jpg
+
+
+
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

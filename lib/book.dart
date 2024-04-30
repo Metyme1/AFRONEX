@@ -165,7 +165,8 @@ class Book {
   final double price;
   final String description;
   final double rating;
-  final int reviewCount;  // Add this line
+  final int reviewCount;
+  int quantity; // Add this line for representing the quantity
 
   Book({
     required this.id,
@@ -175,10 +176,10 @@ class Book {
     required this.price,
     required this.description,
     required this.rating,
-    required this.reviewCount,  // Add this line
+    required this.reviewCount,
+    required this.quantity, // Add this line
   });
 }
-
 
 class Category {
   final String id;
@@ -201,27 +202,38 @@ List<Category> categories = [
   Category(
     id: 'fiction',
     title: 'Fiction Books',
-    imagePath: 'assets/images/1.jpeg',
+    imagePath: 'assets/images/fi1.jpeg',
     rating: 4.8,
     books: [
       Book(
-        id: 'fiction1',
-        title: 'Book 1',
-        author: 'Author 1',
-        imagePath: 'assets/images/1.jpeg',
+        id: '400',
+        title: 'Where Sleeping Girls Lie',
+        author: 'Faridah Àbíké-Íyímídé',
+        imagePath: 'assets/images/fi1.jpg',
         price: 10.99,
-        description: 'A gripping fictional story filled with suspense.',
-        rating: 4.9, reviewCount: 123,
+        description: 'In Where Sleeping Girls Lie ― a YA contemporary mystery by Faridah Àbíké-Íyímídé, the New York Times-bestselling author of Ace of Spades ― a girl new to boarding school discovers dark secrets and coverups after her roommate disappears.',
+        rating: 4.9, reviewCount: 123, quantity: 5,
       ),
       Book(
-        id: 'fiction2',
-        title: 'Book 2',
-        author: 'Author 2',
-        imagePath: 'assets/images/2.jpeg',
-        price: 9.99,
-        description: 'An intriguing literary masterpiece.',
-        rating: 4.8, reviewCount: 100,
+        id: '401',
+        title: 'The Morningside',
+        author: 'Téa Obreht',
+        imagePath: 'assets/images/fi2.jpg',
+        price: 10.99,
+        description: 'In Where Sleeping Girls Lie ― a YA contemporary mystery by Faridah Àbíké-Íyímídé, the New York Times-bestselling author of Ace of Spades ― a girl new to boarding school discovers dark secrets and coverups after her roommate disappears.',
+        rating: 4.9, reviewCount: 123, quantity: 5,
       ),
+      Book(
+        id: '402',
+        title: 'The Underground Library',
+        author: 'Jennifer Ryan',
+        imagePath: 'assets/images/fi3.jpg',
+        price: 10.99,
+        description: 'In Where Sleeping Girls Lie ― a YA contemporary mystery by Faridah Àbíké-Íyímídé, the New York Times-bestselling author of Ace of Spades ― a girl new to boarding school discovers dark secrets and coverups after her roommate disappears.',
+        rating: 4.9, reviewCount: 123, quantity: 5,
+      ),
+
+
       // Add more books here
     ],
   ),
@@ -233,13 +245,31 @@ List<Category> categories = [
     rating: 4.7,
     books: [
       Book(
-        id: 'fiction2',
-        title: 'Book 2',
-        author: 'Author 2',
-        imagePath: 'assets/images/2.jpeg',
+        id: '200',
+        title: 'A Feather So Black',
+        author: 'Lyra Selene',
+        imagePath: 'assets/images/fa1.jpg',
         price: 9.99,
-        description: 'An intriguing literary masterpiece.',
-        rating: 4.8, reviewCount: 100,
+        description: 'Set in a world of perilous magic and moonlit forests, this seductive romantic fantasy tells the story of a defiant changeling, her cursed sister, and the dangerous fae lord she must defeat to save her family.',
+        rating: 4.8, reviewCount: 100, quantity: 3,
+      ),
+      Book(
+        id: '201',
+        title: 'Floating Hotel',
+        author: 'Grace Curtis',
+        imagePath: 'assets/images/fa2.jpg',
+        price: 9.99,
+        description: 'Welcome to the Grand Abeona Hotel: home of the finest food, the sweetest service, and the very best views the galaxy has to offer. All year round it moves from planet to planet, system to system',
+        rating: 4.8, reviewCount: 100, quantity: 3,
+      ),
+      Book(
+        id: '202',
+        title: 'A Cursed Son',
+        author: 'Day Leitao',
+        imagePath: 'assets/images/fa3.jpg',
+        price: 9.99,
+        description: 'Romantic & sexy dreams link a false princess to a dangerous, disgraced fae prince in this fun, steamy enemies-to-lovers romantasy.',
+        rating: 4.8, reviewCount: 100, quantity: 3,
       ),
     ],
   ),
@@ -247,17 +277,35 @@ List<Category> categories = [
   Category(
     id: 'romance',
     title: 'Romance Books',
-    imagePath: 'assets/images/3.jpeg',
+    imagePath: 'assets/images/ro1.jpg',
     rating: 4.6,
     books: [
       Book(
-        id: 'fiction2',
-        title: 'Book 2',
-        author: 'Author 2',
-        imagePath: 'assets/images/2.jpeg',
+        id: '300',
+        title: 'This Could Be Us',
+        author: 'Kennedy Ryan',
+        imagePath: 'assets/images/ro1.jpg',
         price: 9.99,
-        description: 'An intriguing literary masterpiece.',
-        rating: 4.8, reviewCount: 100,
+        description: "Soledad Barnes has her life all planned out. Because, of course, she does. She plans everything. She designs everything. She fixes everything. She’s a domestic goddess who's never met a party she couldn't host or a charge she couldn't lead.",
+        rating: 4.8, reviewCount: 100, quantity: 5,
+      ),
+      Book(
+        id: '301',
+        title: 'This Could Be Us',
+        author: 'Kennedy Ryan',
+        imagePath: 'assets/images/ro1.jpg',
+        price: 9.99,
+        description: "Soledad Barnes has her life all planned out. Because, of course, she does. She plans everything. She designs everything. She fixes everything. She’s a domestic goddess who's never met a party she couldn't host or a charge she couldn't lead.",
+        rating: 4.8, reviewCount: 100, quantity: 5,
+      ),
+      Book(
+        id: '302',
+        title: 'The Emperor and the Endless Palace',
+        author: 'Justinian Huang',
+        imagePath: 'assets/images/ro3.jpg',
+        price: 9.99,
+        description: "Soledad Barnes has her life all planned out. Because, of course, she does. She plans everything. She designs everything. She fixes everything. She’s a domestic goddess who's never met a party she couldn't host or a charge she couldn't lead.",
+        rating: 4.8, reviewCount: 100, quantity: 5,
       ),
     ],
   ),
@@ -265,17 +313,35 @@ List<Category> categories = [
   Category(
     id: 'kids',
     title: 'Books For Kids',
-    imagePath: 'assets/images/1.jpeg',
+    imagePath: 'assets/images/kid1.jpeg',
     rating: 4.9,
     books: [
       Book(
-        id: 'fiction2',
-        title: 'Book 2',
-        author: 'Author 2',
-        imagePath: 'assets/images/2.jpeg',
+        id: '100',
+        title: 'Big Cheese',
+        author: 'Jory John',
+        imagePath: 'assets/images/kid1.jpeg',
         price: 9.99,
-        description: 'An intriguing literary masterpiece.',
-        rating: 4.8, reviewCount: 100,
+        description: 'The Big Cheese - Book Review - What Book Next.com. The Big Cheese was once just a tiny curd in a bowl of other curds, but one day he decided he wanted more. He wanted to be the BIG CHEESE. His quest to be the best at EVERYTHING began, resulting in sports, speaking, theatre, and fashion FAME.',
+        rating: 4.8, reviewCount: 100, quantity: 9,
+      ),
+      Book(
+        id: '101',
+        title: 'The Wonderful Things You Will Be?',
+        author: 'Emily Winfield Martin',
+        imagePath: 'assets/images/kid2.jpeg',
+        price: 9.99,
+        description: 'The Big Cheese - Book Review - What Book Next.com. The Big Cheese was once just a tiny curd in a bowl of other curds, but one day he decided he wanted more. He wanted to be the BIG CHEESE. His quest to be the best at EVERYTHING began, resulting in sports, speaking, theatre, and fashion FAME.',
+        rating: 4.8, reviewCount: 100, quantity: 9,
+      ),
+      Book(
+        id: '102',
+        title: 'Dog Man',
+        author: 'George R. Maclay',
+        imagePath: 'assets/images/kid3.jpeg',
+        price: 9.99,
+        description: 'The Big Cheese - Book Review - What Book Next.com. The Big Cheese was once just a tiny curd in a bowl of other curds, but one day he decided he wanted more. He wanted to be the BIG CHEESE. His quest to be the best at EVERYTHING began, resulting in sports, speaking, theatre, and fashion FAME.',
+        rating: 4.8, reviewCount: 100, quantity: 9,
       ),
     ],
   ),
@@ -283,17 +349,17 @@ List<Category> categories = [
   Category(
     id: 'science',
     title: 'Science Books',
-    imagePath: 'assets/images/1.jpeg',
+    imagePath: 'assets/images/sc1.jpeg',
     rating: 4.7,
     books: [
       Book(
-        id: 'fiction2',
-        title: 'Book 2',
-        author: 'Author 2',
-        imagePath: 'assets/images/2.jpeg',
+        id: '500',
+        title: 'The Mars House',
+        author: 'Natasha Pulley',
+        imagePath: 'assets/images/sc1.jpg',
         price: 9.99,
-        description: 'An intriguing literary masterpiece.',
-        rating: 4.8, reviewCount: 100,
+        description: 'From the author of The Watchmaker of Filigree Street, a queer sci-fi novel about an Earth refugee and a Mars politician who fake marry to save their reputations—and their planet.',
+        rating: 4.8, reviewCount: 100, quantity: 23,
       ),
     ],
   ),
